@@ -114,11 +114,21 @@ def problem2a(circle, rectangle, window):
     circle.attach_to(window)
     rectangle.attach_to(window)
     window.render()
-    window.close_on_mouse_click()
+    window.continue_on_mouse_click()
 
     top = rectangle.get_upper_right_corner()
     bottom = rectangle.get_lower_left_corner()
-    line = rg.
+    line = rg.Line(top, bottom)
+    #new = line.arrow
+    line.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
+
+    rectangle.outline_color = circle.fill_color
+    window.render()
+
+
+
 
 
 
@@ -193,6 +203,10 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # ------------------------------------------------------------------
+
+    rect.attach_to(win)
+    for k in range(n):
+        
 
 
 # ----------------------------------------------------------------------
