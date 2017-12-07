@@ -195,7 +195,7 @@ def problem2b(rect, n, delta, win):
       :type win:    rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -205,15 +205,22 @@ def problem2b(rect, n, delta, win):
     # ------------------------------------------------------------------
 
     space = rect.get_upper_right_corner()
+    width = rect.get_lower_left_corner()
+    addone = width.x
+    addtwo = width.y
     add1 = space.x
     add2 = space.y
     rect.attach_to(win)
-    for k in range(n):
-        center = rg.Point(add1, add2)
-        rectangle = rg.Rectangle(center)
-        
-        add1 = add1 + 2*delta
-        add2 = add2 + 2*delta
+    for k in range(n-1):
+        addone = addone - delta
+        addtwo = addtwo + delta
+        add1 = add1 + delta
+        add2 = add2 - delta
+        top = rg.Point(add1, add2)
+        bottom = rg.Point(addone, addtwo)
+        rectangle = rg.Rectangle(top, bottom)
+        rectangle.attach_to(win)
+    win.render()
 
 
 

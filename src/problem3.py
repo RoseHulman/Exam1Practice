@@ -258,7 +258,7 @@ def problem3b(m, point1):
     count = 0
     thick = 1
     for k in range(m):
-        newt = 
+        newt =
     for k in range(n):
         newtop = rg.Point(x, y)
         newbottom = rg.Point(x, y+50)
