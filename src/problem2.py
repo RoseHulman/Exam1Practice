@@ -204,9 +204,18 @@ def problem2b(rect, n, delta, win):
     #    TIME ESTIMATE:   15 to 25 minutes.
     # ------------------------------------------------------------------
 
+    space = rect.get_upper_right_corner()
+    add1 = space.x
+    add2 = space.y
     rect.attach_to(win)
     for k in range(n):
+        center = rg.Point(add1, add2)
+        rectangle = rg.Rectangle(center)
         
+        add1 = add1 + 2*delta
+        add2 = add2 + 2*delta
+
+
 
 
 # ----------------------------------------------------------------------
