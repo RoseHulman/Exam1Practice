@@ -253,29 +253,15 @@ def problem3b(m, point1):
     # ------------------------------------------------------------------
 
     window = rg.RoseWindow(400, 650)
+    count = 0
+    n = 3
     x = point1.x
     y = point1.y
-    count = 0
-    thick = 1
-    for k in range(m):
-        newt =
-    for k in range(n):
-        newtop = rg.Point(x, y)
-        newbottom = rg.Point(x, y+50)
-        line = rg.Line(newtop, newbottom)
-        if k == 0:
-            thick = 1
-        elif k <= 6:
-            thick = thick + 2
-        else:
-            thick = 13
-        line.thickness = thick
-        line.attach_to(window)
-        count = count + line.thickness
-        x = x + 20
-        y = y + 10
-    window.render()
-    return count
+    for k in range(m-1):
+        point = rg.Point()
+        count = count + problem3a(window, n)
+        n = n + 2
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
