@@ -234,9 +234,7 @@ def problem3b(m, point1):
            then closes the window.
 
     Type hints:
-        :type m:      int
-        :type point1: rg.Point
-    """
+        :type m:    """
     # ------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #          Tests have been written for you (above).
@@ -257,10 +255,14 @@ def problem3b(m, point1):
     n = 3
     x = point1.x
     y = point1.y
-    for k in range(m-1):
-        point = rg.Point()
-        count = count + problem3a(window, n)
+    for k in range(m):
+        point = rg.Point(x, y)
+        count = count + problem3a(window, point, n)
         n = n + 2
+        y = y + 60
+
+    window.close_on_mouse_click()
+    return count
 
 
 # ----------------------------------------------------------------------
